@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "512358689598",
+    "firebase_url": "https://womansafety-1c691-default-rtdb.firebaseio.com",
+    "project_id": "womansafety-1c691",
+    "storage_bucket": "womansafety-1c691.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512358689598:android:7f935fb5db6bbb097c5a6f",
+        "android_client_info": {
+          "package_name": "com.example.therakshalink"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASQelJi5rlCddnobaBOwTcGW226pjBqck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

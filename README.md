@@ -11,3 +11,5 @@ Real-Time Alerts
 Data-Driven Insights
 Integration with Authorities
 JATAYU ensures women's safety by providing immediate support and data-driven solutions for safer urban environments.
+
+![image](https://github.com/user-attachments/assets/d3935f7c-e9d5-46c3-8314-da1ae0cad885)

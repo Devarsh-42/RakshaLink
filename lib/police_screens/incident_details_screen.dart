@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+// The screen for showing incident details, including a map view
 class IncidentDetailsScreen extends StatelessWidget {
   final Map<dynamic, dynamic> incident;
 
@@ -20,13 +22,13 @@ class IncidentDetailsScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.home, color: Colors.white),
             onPressed: () {
-              // Navigate to home screen
+              // Navigate to home screen (if applicable)
             },
           ),
           IconButton(
             icon: const Icon(Icons.info, color: Colors.white),
             onPressed: () {
-              // Show info dialog
+              // Show info dialog (if necessary)
             },
           ),
         ],
@@ -39,7 +41,7 @@ class IncidentDetailsScreen extends StatelessWidget {
             children: [
               _buildInfoCard(),
               const SizedBox(height: 16),
-              _buildMapView(),
+              _buildMapView(context),
               const SizedBox(height: 16),
               _buildEmergencyContacts(),
               const SizedBox(height: 24),
@@ -91,7 +93,7 @@ class IncidentDetailsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildMapView() {
+  Widget _buildMapView(BuildContext context) {
     double latitude = _parseDouble(incident['latitude']) ?? 23.2156;
     double longitude = _parseDouble(incident['longitude']) ?? 72.6369;
 
@@ -128,9 +130,9 @@ class IncidentDetailsScreen extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                child: const Text('View Larger Map'),
+                child: const Text('View in Google Maps'),
                 onPressed: () {
-                  // Open larger map view
+                  _openGoogleMaps(latitude, longitude);
                 },
               ),
             ),
@@ -176,7 +178,7 @@ class IncidentDetailsScreen extends StatelessWidget {
           style: TextStyle(fontSize: 18),
         ),
         onPressed: () {
-          // Handle response action
+          // Handle response action here
         },
       ),
     );
@@ -186,5 +188,15 @@ class IncidentDetailsScreen extends StatelessWidget {
     if (value is double) return value;
     if (value is String) return double.tryParse(value);
     return null;
+  }
+
+  Future<void> _openGoogleMaps(double latitude, double longitude) async {
+    final googleMapsUrl = Uri.parse('https://www.google.com/maps/search/?api=1&query=$latitude,$longitude');
+
+    if (await canLaunchUrl(googleMapsUrl)) {
+      await launchUrl(googleMapsUrl);
+    } else {
+      throw 'Could not open Google Maps';
+    }
   }
 }

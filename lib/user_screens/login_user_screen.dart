@@ -73,7 +73,7 @@ class _LoginUserPageState extends State<LoginUserPage> {
                       child: const Text(
                         "Joint Action and Tracking for Alerting Urban Safety System",
                         style: TextStyle(
-                          fontSize: 36,
+                          fontSize: 20,
                           color: Colors.white,
                           fontFamily: 'PoppinsRegular',
                         ),
@@ -146,7 +146,8 @@ class _LoginUserPageState extends State<LoginUserPage> {
               ),
               const SizedBox(height: 12),
               ElevatedButton(
-                onPressed: () => _signInWithPhoneNumber,
+                onPressed: () => Navigator.pushReplacementNamed(context, "/userdashboard"),
+                // _signInWithPhoneNumber,
                 style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromRGBO(58, 152, 246, 1.0),
                     shape: RoundedRectangleBorder(
@@ -229,7 +230,7 @@ class _LoginUserPageState extends State<LoginUserPage> {
 
     try {
       await _auth.signInWithCredential(credential);
-      Navigator.pushReplacementNamed(context, "/dashboard");
+      Navigator.pushReplacementNamed(context, "/userdashboard");
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Login failed: $e")),

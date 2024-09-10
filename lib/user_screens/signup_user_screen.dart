@@ -32,6 +32,7 @@ class _SignupUserPageState extends State<SignupUserPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              // Top header design
               Container(
                 padding: const EdgeInsets.fromLTRB(40, 35, 40, 5),
                 decoration: BoxDecoration(
@@ -57,15 +58,16 @@ class _SignupUserPageState extends State<SignupUserPage> {
                     const Text(
                       "Jatayu",
                       style: TextStyle(
-                          fontSize: 40,
-                          color: Color.fromRGBO(221, 221, 221, 1),
-                          fontFamily: 'PoppinsMedium'),
+                        fontSize: 40,
+                        color: Color.fromRGBO(221, 221, 221, 1),
+                        fontFamily: 'PoppinsMedium',
+                      ),
                     ),
                     ShaderMask(
                       shaderCallback: (bounds) => const LinearGradient(
                         colors: [
                           Color.fromRGBO(217, 217, 217, 1),
-                          Color.fromRGBO(175, 175, 175, 80)
+                          Color.fromRGBO(175, 175, 175, 0.8)
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -73,7 +75,7 @@ class _SignupUserPageState extends State<SignupUserPage> {
                       child: const Text(
                         "Joint Action and Tracking for Alerting Urban Safety System",
                         style: TextStyle(
-                          fontSize: 36,
+                          fontSize: 20,
                           color: Colors.white,
                           fontFamily: 'PoppinsRegular',
                         ),
@@ -81,84 +83,104 @@ class _SignupUserPageState extends State<SignupUserPage> {
                     ),
                     const SizedBox(height: 45),
                     const Center(
-                        child: Text(
-                          "User Signup",
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontFamily: 'LatoBold'),
-                        ))
+                      child: Text(
+                        "User Signup",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontFamily: 'LatoBold',
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
               const SizedBox(height: 75),
+              // Phone number input
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                 child: TextField(
                   controller: _phoneController,
                   decoration: InputDecoration(
-                      labelText: 'Enter your phone number',
-                      labelStyle:
-                      const TextStyle(color: Color.fromRGBO(170, 170, 170, 1)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: const BorderSide(color: Colors.black)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: const BorderSide(color: Colors.black))),
+                    labelText: 'Enter your phone number',
+                    labelStyle: const TextStyle(
+                      color: Color.fromRGBO(170, 170, 170, 1),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: const BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: const BorderSide(color: Colors.black),
+                    ),
+                  ),
                   keyboardType: TextInputType.phone,
                 ),
               ),
               const SizedBox(height: 12),
+              // Send OTP button
               ElevatedButton(
-                onPressed: () => _verifyPhoneNumber(),
+                onPressed: _verifyPhoneNumber,
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromRGBO(58, 152, 246, 1.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0),
-                    ),
-                    fixedSize: const Size(375, 50),
-                    elevation: 6
+                  backgroundColor: const Color.fromRGBO(58, 152, 246, 1.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                  ),
+                  fixedSize: const Size(375, 50),
+                  elevation: 6,
                 ),
                 child: const Text(
                   "Send OTP",
                   style: TextStyle(
-                      fontSize: 16, color: Colors.white, fontFamily: 'LatoBold'),
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontFamily: 'LatoBold',
+                  ),
                 ),
               ),
               const SizedBox(height: 22),
+              // OTP input
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                 child: TextField(
                   controller: _otpController,
                   decoration: InputDecoration(
-                      labelText: 'Enter OTP',
-                      labelStyle:
-                      const TextStyle(color: Color.fromRGBO(170, 170, 170, 1)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: const BorderSide(color: Colors.black)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          borderSide: const BorderSide(color: Colors.black))),
+                    labelText: 'Enter OTP',
+                    labelStyle: const TextStyle(
+                      color: Color.fromRGBO(170, 170, 170, 1),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: const BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: const BorderSide(color: Colors.black),
+                    ),
+                  ),
                   keyboardType: TextInputType.number,
                 ),
               ),
               const SizedBox(height: 12),
+              // Sign Up button
               ElevatedButton(
-                onPressed: () => _signUpWithPhoneNumber(),
+                onPressed: _signUpWithPhoneNumber,
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromRGBO(58, 152, 246, 1.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0),
-                    ),
-                    fixedSize: const Size(375, 50),
-                    elevation: 6
+                  backgroundColor: const Color.fromRGBO(58, 152, 246, 1.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                  ),
+                  fixedSize: const Size(375, 50),
+                  elevation: 6,
                 ),
                 child: const Text(
-                  "Signup",
+                  "Sign Up",
                   style: TextStyle(
-                      fontSize: 16, color: Colors.white, fontFamily: 'LatoBold'),
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontFamily: 'LatoBold',
+                  ),
                 ),
               ),
               const SizedBox(height: 12),
@@ -177,16 +199,18 @@ class _SignupUserPageState extends State<SignupUserPage> {
                 ),
               ),
               const SizedBox(height: 12),
+              // Redirect to Login page
               GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(context, '/login');
                 },
                 child: const Text(
-                  "Already have an account?",
+                  "Already have an account? Login",
                   style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.blueAccent,
-                      fontFamily: 'LatoBold'),
+                    fontSize: 16,
+                    color: Colors.blueAccent,
+                    fontFamily: 'LatoBold',
+                  ),
                 ),
               ),
             ],
@@ -195,6 +219,8 @@ class _SignupUserPageState extends State<SignupUserPage> {
       ),
     );
   }
+
+  // Function to verify phone number and send OTP
   Future<void> _verifyPhoneNumber() async {
     await _auth.verifyPhoneNumber(
       phoneNumber: _phoneController.text,
@@ -219,6 +245,7 @@ class _SignupUserPageState extends State<SignupUserPage> {
     );
   }
 
+  // Function to sign up with phone number using OTP
   Future<void> _signUpWithPhoneNumber() async {
     String smsCode = _otpController.text.trim();
 
@@ -232,7 +259,7 @@ class _SignupUserPageState extends State<SignupUserPage> {
       Navigator.pushReplacementNamed(context, "/dashboard");
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Signup failed: $e")),
+        SnackBar(content: Text("Sign Up failed: $e")),
       );
     }
   }

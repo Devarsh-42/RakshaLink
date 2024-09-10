@@ -31,7 +31,7 @@ class SelectionScreen extends StatelessWidget {
               },
               child: Text(
                 'Police Login',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Colors.white),
               ),
             ),
             SizedBox(height: 20), // Space between buttons
@@ -47,7 +47,7 @@ class SelectionScreen extends StatelessWidget {
               },
               child: Text(
                 'Normal User Login',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Colors.white),
               ),
             ),
           ],

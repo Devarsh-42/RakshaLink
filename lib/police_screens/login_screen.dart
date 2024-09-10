@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: const Text(
                         "Joint Action and Tracking for Alerting Urban Safety System",
                         style: TextStyle(
-                          fontSize: 36,
+                          fontSize: 20,
                           color: Colors.white, // This color is a placeholder
                           fontFamily: 'PoppinsRegular',
                         ),

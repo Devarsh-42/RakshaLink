@@ -124,9 +124,10 @@ Sync and Test
 
 <h3>Contact</h3>  
 <ul>  
-    <li><a href="https://github.com/Devarsh-42">Devarsh-42</a></li>  
-    <li><a href="https://github.com/priyaladesara">priyaladesara</a></li>  
-    <li><a href="https://github.com/ITSPRIYANSHUUCHHAT">ITSPRIYANSHUUCHHAT</a></li>  
+    <li><a href="https://github.com/Devarsh-42">Devarsh</a></li>  
+    <li><a href="https://github.com/priyaladesara">Priyal</a></li>  
+    <li><a href="https://github.com/ITSPRIYANSHUUCHHAT">Priyanshu</a></li> 
+    <li><a href="https://github.com/Sakshi4420">Sakshi</a></li> 
 </ul>
 
 

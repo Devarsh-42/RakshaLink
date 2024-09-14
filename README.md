@@ -115,7 +115,7 @@ Sync and Test
 <h3>Team Members</h3>  
 <ul>  
     <li>Dhruvit Agarwal</li>  
-    <li>Devarshmehta</li>  
+    <li>Devarsh Mehta</li>  
     <li>Sakshi Parashar</li>  
     <li>Priyal Adesara</li>  
     <li>Priyanshu Uchat</li>  
